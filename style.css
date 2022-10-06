@@ -1,0 +1,14 @@
+.loader-parent {
+    display: flex;
+    gap: 8px;
+}
+.bubble {
+    height: 30px;
+    width: 30px;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+body {
+    margin: 100px;
+}
