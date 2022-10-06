@@ -1,14 +1,44 @@
-.loader-parent {
-    display: flex;
-    gap: 8px;
-}
-.bubble {
-    height: 30px;
-    width: 30px;
-    background-color: grey;
-    border-radius: 50%;
+:root {
+    --bubble-diameter: 30px;
 }
 
 body {
     margin: 100px;
+}
+
+@keyframes jiggle {
+    0% {
+        top: 0px;
+        background-color: rgba(128, 128, 128, .4);
+    }
+    100% {
+        top: calc( var(--bubble-diameter));
+        background-color: rgba(128, 128, 128, 1);
+    }
+}
+.loader-parent {
+    display: flex;
+    gap: 8px;
+    height:  calc( var(--bubble-diameter) );
+    
+}
+.bubble {
+    height: var(--bubble-diameter);
+    width: var(--bubble-diameter);
+    background-color: rgba(128, 128, 128, 1);
+    border-radius: 50%;
+    animation-name: jiggle;
+    animation-duration: .8s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    position: relative;
+}
+
+.bubble2 {
+    animation-delay: .2s;
+}
+
+.bubble3 {
+    animation-delay: .4s;
 }
